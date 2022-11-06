@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Requests\CategoryRequests\UpdateCategoryRequest;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {

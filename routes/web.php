@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/admin', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
 
 Route::group(['prefix' => 'categories'], function() {
@@ -36,4 +37,14 @@ Route::group(['prefix' => 'products'], function() {
     Route::get('/{product}', \App\Http\Controllers\Product\ShowController::class)->name('product.show');
     Route::patch('/{product}', \App\Http\Controllers\Product\UpdateController::class)->name('product.update');
     Route::delete('/{product}', \App\Http\Controllers\Product\DestroyController::class)->name('product.delete');
+});
+
+Route::group(['prefix' => 'users'], function() {
+    Route::get('/', \App\Http\Controllers\User\IndexController::class)->name('user.index');
+    Route::get('/create', \App\Http\Controllers\User\CreateController::class)->name('user.create');
+    Route::post('/', \App\Http\Controllers\User\StoreController::class)->name('user.store');
+    Route::get('/{user}/edit', \App\Http\Controllers\User\EditController::class)->name('user.edit');
+    Route::get('/{user}', \App\Http\Controllers\User\ShowController::class)->name('user.show');
+    Route::patch('/{user}', \App\Http\Controllers\User\UpdateController::class)->name('user.update');
+    Route::delete('/{user}', \App\Http\Controllers\User\DestroyController::class)->name('user.delete');
 });

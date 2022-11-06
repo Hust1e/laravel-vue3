@@ -39,6 +39,9 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{ route('category.index') }}" class="nav-link">Category</a>
             </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('user.index') }}" class="nav-link">Users</a>
+            </li>
         </ul>
 
         <!-- Right navbar links -->
